@@ -7,15 +7,17 @@
     "node": "18.x"
   },
   "scripts": {
+    "copyfiles": "copyfiles",
     "tsc": "tsc",
     "start": "node dist/server.js",
-    "postinstall": "npm rum tsc && copyfiles -u 1 src/**/*.mustache dist/",
+    "postinstall": "npm rum tsc && npm rum copyfiles -u 1 src/**/*.mustache dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon -e ts,json,mustache src/server.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "mustache-express": "^1.3.2",
